@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def new  
+  def new
   end
 
   def create
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:sessions][:password])
       # Log the user in and redirect to the user's show page.
       flash[:success] = 'Thank you for signing in!'
-      signin_url user
+      sign_in user
       redirect_to root_path
     else
       # Create an error message.

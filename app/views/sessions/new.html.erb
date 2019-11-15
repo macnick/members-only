@@ -3,15 +3,17 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-  <%= form_for(:sessions, url: sessions_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+  <h1 class="text-center">Sign in</h1>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+  <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.submit 'Sign In'%>
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
 
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary form-control mt-1" %>
   <% end %>
   </div>
 </div>
