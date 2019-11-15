@@ -1,10 +1,7 @@
 module SessionsHelper
 
   def sign_in(user)
-    remember_token = User.new_remember_token
-    cookies.permanent[:remember_token] = remember_token
-    user.update_attribute(:remember_token, User.digest(remember_token))
-    self.current_user = user
+    session[:user_id] = user.id
   end
 
   def current_user?(user)
@@ -12,18 +9,37 @@ module SessionsHelper
   end
 
   def current_user
-    remember_token = User.digest(cookies[:remember_token])
-    @current_user ||= User.find_by(remember_token: remember_token)
+    if (user_id = session[:user_id])
+      @current_user ||= User.find(user_id)
+    elsif (user_id = cookies.signed[:user_id])
+      user = User.find(user_id)
+      if user && user.authenticate(cookies[:remember_token])
+          log_in user
+          @current_user = user
+      end
+    end
   end
 
   def signed_in?
     !current_user.nil?
   end
 
-  def sign_out
-    current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
-    cookies.delete(:remember_token)
-    self.current_user = nil
+  # Remembers given user
+  def remember(user)
+    user.remember_token
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
   end
-
+  
+  # Forgets given user
+  def forget(user)
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
+  
+  def sign_out
+    forget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
+  end
 end
