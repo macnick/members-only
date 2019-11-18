@@ -1,5 +1,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$myred: #f22;
+
 .mt-1 {
-    margin-top: 1em;
+  margin-top: 1em;
+}
+.footer {
+  margin-top: 100px;
+}
+.card {
+  padding: 10px;
+  border-radius: 10px;
+}
+#posts {
+  margin-top: 54px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $myred;
+    text-decoration: none;
+  }
 }

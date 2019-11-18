@@ -8,8 +8,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to root_path
+    if @post.save
+      flash[:success] = "Successfully posted!"
+      redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -25,6 +29,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :user_id)
+    params.require(:post).permit(:title, :comment, :user_id)
   end
 end
