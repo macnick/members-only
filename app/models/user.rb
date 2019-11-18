@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   before_create :create_remember_token
+  has_many :posts
 
   # Returns a random token.
   def User.new_token
@@ -18,4 +19,3 @@ class User < ApplicationRecord
   end
 
 end
- 
