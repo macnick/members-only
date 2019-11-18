@@ -1,24 +1,30 @@
-# README
+# Members only project using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, you’ll be building an exclusive clubhouse where your members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+To get started with the app, first clone the repo 
 
-* System dependencies
+``` 
+git clone  https://github.com/macnick/members-only.git 
+```
+Then install the needed gems:
 
-* Configuration
+```
+bundle install --without production 
+```
 
-* Database creation
+Next, migrate the database:
 
-* Database initialization
+```
+ rails db:migrate
+```
 
-* How to run the test suite
+Finally, run the app in a local server:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+ rails server
+```
 
-* Deployment instructions
-
-* ...
+To see more information and learn about Rails check this [Ruby on Rails](https://www.railstutorial.org/book) Tutorial book.
