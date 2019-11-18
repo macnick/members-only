@@ -26,5 +26,9 @@ Finally, run the app in a local server:
 ```
  rails server
 ```
+## COntributors
+
+1. [Haralampopoulos Nick](www.github.com/macnick)
+2. [Daniel Larbi Addo](www.github.com/addod19)
 
 To see more information and learn about Rails check this [Ruby on Rails](https://www.railstutorial.org/book) Tutorial book.
