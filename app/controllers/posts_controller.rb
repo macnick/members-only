@@ -15,10 +15,16 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-  
+
   def signed_in_user
     unless signed_in?
       redirect_to signin_url
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
   end
 end
