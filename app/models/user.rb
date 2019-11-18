@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_secure_password
   before_create :create_remember_token
   has_many :posts
 
   # Returns a random token.
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
-  def User.digest(token)
+  def self.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
 
@@ -17,5 +19,4 @@ class User < ApplicationRecord
   def create_remember_token
     self.remember_token = User.digest(User.new_token)
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   def new
     redirect_to root_url if signed_in?
@@ -5,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:session][:email])
-    if @user && @user.authenticate(params[:session][:password])
+    if @user&.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       flash[:success] = 'Thank you for signing in!'
       sign_in @user
