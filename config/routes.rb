@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+  resources :users
 
   resources :posts, only: %i[new create index]
   root 'posts#index'
