@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 module SessionsHelper
-  def sign_in(user)
-    session[:user_id] = user.id
-  end
+
+
 
   def current_user?(user)
     user == current_user
@@ -38,9 +37,5 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
-  def sign_out
-    forget(current_user)
-    session.delete(:user_id)
-    @current_user = nil
-  end
+
 end
