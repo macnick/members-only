@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 module SessionsHelper
-
-
-
   def current_user?(user)
     user == current_user
   end
@@ -36,6 +33,4 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
-
-
 end

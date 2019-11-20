@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash.now[:success] = "successful"
+      flash.now[:success] = 'successful'
       redirect_to posts_path
     else
       render 'new'
