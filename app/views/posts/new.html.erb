@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  <h1 class="text-center">New Post</h1>
+
+<%= form_for @post do |f| %>
+
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.label :comment %>
+  <%= f.text_area :comment, class: 'form-control' %>
+
+
+  <%= f.submit "Create Post", class: "btn btn-large btn-primary form-control mt-1" %>
+
+<% end %>
+
+  </div>
+</div>

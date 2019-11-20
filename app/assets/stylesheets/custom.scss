@@ -1,0 +1,67 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$myred: #f22;
+
+body {
+  padding-top: 50px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+.footer {
+  margin-top: 100px;
+}
+.card {
+  padding: 10px;
+  border-radius: 10px;
+}
+#posts {
+  margin-top: 54px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $myred;
+    text-decoration: none;
+  }
+}
+
+#error_explanation {
+  color: $myred;
+  ul {
+    color: $myred;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
