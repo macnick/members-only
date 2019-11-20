@@ -3,6 +3,25 @@
 
 $myred: #f22;
 
+body {
+  padding-top: 50px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
 .mt-1 {
   margin-top: 1em;
 }

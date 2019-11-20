@@ -4,15 +4,16 @@ In this project, you’ll be building an exclusive clubhouse where your members 
 
 ## Getting started
 
-To get started with the app, first clone the repo 
+To get started with the app, first clone the repo
 
-``` 
-git clone  https://github.com/macnick/members-only.git 
 ```
+git clone  https://github.com/macnick/members-only.git
+```
+
 Then install the needed gems:
 
 ```
-bundle install --without production 
+bundle install --without production
 ```
 
 Next, migrate the database:
@@ -26,9 +27,10 @@ Finally, run the app in a local server:
 ```
  rails server
 ```
-## COntributors
 
-1. [Haralampopoulos Nick](www.github.com/macnick)
+## Contributors
+
+1. [Nick Haralampopoulos](www.github.com/macnick)
 2. [Daniel Larbi Addo](www.github.com/addod19)
 
 To see more information and learn about Rails check this [Ruby on Rails](https://www.railstutorial.org/book) Tutorial book.

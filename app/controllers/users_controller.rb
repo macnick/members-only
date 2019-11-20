@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash.now[:success] = 'successful'
+      flash[:success] = 'Your account was created successfully. Please sign in to post.'
       redirect_to posts_path
     else
       render 'new'
